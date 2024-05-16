@@ -15,4 +15,6 @@
  * limitations under the License.
  */
 
-export * from "./AutoNumericTextField";
+export * from "./AutoNumericTextField.js";
+
+export type * from "./AutoNumericTextField.d.ts";

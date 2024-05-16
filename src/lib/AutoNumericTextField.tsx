@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase";
+import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase.js";
 import type { CallbackOptions } from "autonumeric";
 import { TextField } from "@mui/material";
 

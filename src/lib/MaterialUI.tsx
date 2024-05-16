@@ -22,8 +22,12 @@ import type { CallbackOptions } from "autonumeric";
 type Props<Component extends React.FunctionComponent> =
   Parameters<Component>[0] & { inputRef?: undefined };
 
+/** List of MUI components that with input-style behaviors. */
+const supportedMUIInputComponents = [TextField, OutlinedInput] as const;
+
+// Creates AutoNumeric MUI components, absorbs much of the boilerplate.
 function createAutoNumericMUIComponent<
-  Component extends typeof TextField | typeof OutlinedInput,
+  Component extends (typeof supportedMUIInputComponents)[number],
 >(comp: Component) {
   return ({
     props,
@@ -51,3 +55,9 @@ function createAutoNumericMUIComponent<
 export const AutoNumericTextField = createAutoNumericMUIComponent(TextField);
 export const AutoNumericOutlinedInput =
   createAutoNumericMUIComponent(OutlinedInput);
+
+/** List of AutoNumeric MUI components. */
+export const autoNumericMUIComponents = [
+  { name: "AutoNumericTextField", Component: AutoNumericTextField },
+  { name: "AutoNumericOutlinedInput", Component: AutoNumericOutlinedInput },
+] as const;

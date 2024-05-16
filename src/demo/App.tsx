@@ -18,7 +18,8 @@
 import {
   AutoNumericOutlinedInput,
   AutoNumericTextField,
-} from "../lib/index.js";
+  autoNumericMUIComponents,
+} from "../lib/MaterialUI.js";
 import { Button, Stack, Typography } from "@mui/material";
 import AutoNumeric from "autonumeric";
 import { useState } from "react";
@@ -27,14 +28,20 @@ type DemoComponent =
   | typeof AutoNumericTextField
   | typeof AutoNumericOutlinedInput;
 
-function Demo({ Comp }: { Comp: DemoComponent }): JSX.Element {
+function Demo({
+  name,
+  Comp,
+}: {
+  name: string;
+  Comp: DemoComponent;
+}): JSX.Element {
   const [controlledInputState, setControlledInputState] = useState(
     AutoNumeric.format("100000"),
   );
 
   return (
     <>
-      <Typography variant="h2">{Comp.name}</Typography>
+      <Typography variant="h2">{name}</Typography>
       <div>
         <Comp
           props={{
@@ -98,8 +105,9 @@ export default function App(): JSX.Element {
         <Typography variant="h1">
           <a href="https://mui-autonumeric.8hob.io">MUI-AutoNumeric</a> Demo
         </Typography>
-        <Demo Comp={AutoNumericTextField} />
-        <Demo Comp={AutoNumericOutlinedInput} />
+        {autoNumericMUIComponents.map((comp) => (
+          <Demo name={comp.name} Comp={comp.Component} />
+        ))}
       </Stack>
     </>
   );

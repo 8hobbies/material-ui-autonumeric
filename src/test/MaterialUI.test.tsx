@@ -19,16 +19,15 @@ import AutoNumeric, { CallbackOptions } from "autonumeric";
 import {
   AutoNumericOutlinedInput,
   AutoNumericTextField,
-} from "../lib/index.js";
+  autoNumericMUIComponents,
+} from "../lib/MaterialUI.js";
 import { render, screen } from "@testing-library/react";
 import { useState } from "react";
 import { userEvent } from "@testing-library/user-event";
 
-for (const Component of [
-  AutoNumericTextField,
-  AutoNumericOutlinedInput,
-] as const) {
-  describe(Component.name, () => {
+for (const component of autoNumericMUIComponents) {
+  const Component = component.Component;
+  describe(component.name, () => {
     function ControlledAutoNumericComponentWrapper({
       props,
       autoNumericOptions,

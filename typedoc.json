@@ -1,7 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "tsconfig": "./src/lib/tsconfig.json",
-  "entryPoints": ["./src/lib/AutoNumericTextField.tsx"],
+  "entryPoints": ["./src/lib/MaterialUI.tsx"],
   "entryPointStrategy": "expand",
   "plugin": [
     "@8hobbies/typedoc-plugin-404",

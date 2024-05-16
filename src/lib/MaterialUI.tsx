@@ -22,46 +22,32 @@ import type { CallbackOptions } from "autonumeric";
 type Props<Component extends React.FunctionComponent> =
   Parameters<Component>[0] & { inputRef?: undefined };
 
-export function AutoNumericTextField({
-  props,
-  autoNumericOptions,
-  valueState,
-}: {
-  props?: Readonly<Props<typeof TextField>>;
-  autoNumericOptions?: Readonly<CallbackOptions>;
-  valueState?: {
-    state: Readonly<string>;
-    stateSetter: React.Dispatch<React.SetStateAction<string>>;
+function createAutoNumericMUIComponent<
+  Component extends typeof TextField | typeof OutlinedInput,
+>(comp: Component) {
+  return ({
+    props,
+    autoNumericOptions,
+    valueState,
+  }: {
+    props?: Readonly<Props<Component>>;
+    autoNumericOptions?: Readonly<CallbackOptions>;
+    valueState?: {
+      state: Readonly<string>;
+      stateSetter: React.Dispatch<React.SetStateAction<string>>;
+    };
+  }): JSX.Element => {
+    return (
+      <AutoNumericMUIInputBase
+        comp={comp}
+        props={props}
+        autoNumericOptions={autoNumericOptions}
+        valueState={valueState}
+      />
+    );
   };
-}): JSX.Element {
-  return (
-    <AutoNumericMUIInputBase
-      comp={TextField}
-      props={props}
-      autoNumericOptions={autoNumericOptions}
-      valueState={valueState}
-    />
-  );
 }
 
-export function AutoNumericOutlinedInput({
-  props,
-  autoNumericOptions,
-  valueState,
-}: {
-  props?: Readonly<Props<typeof OutlinedInput>>;
-  autoNumericOptions?: Readonly<CallbackOptions>;
-  valueState?: {
-    state: Readonly<string>;
-    stateSetter: React.Dispatch<React.SetStateAction<string>>;
-  };
-}): JSX.Element {
-  return (
-    <AutoNumericMUIInputBase
-      comp={OutlinedInput}
-      props={props}
-      autoNumericOptions={autoNumericOptions}
-      valueState={valueState}
-    />
-  );
-}
+export const AutoNumericTextField = createAutoNumericMUIComponent(TextField);
+export const AutoNumericOutlinedInput =
+  createAutoNumericMUIComponent(OutlinedInput);

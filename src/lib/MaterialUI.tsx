@@ -15,7 +15,13 @@
  * limitations under the License.
  */
 
-import { OutlinedInput, TextField } from "@mui/material";
+import {
+  FilledInput,
+  Input,
+  InputBase,
+  OutlinedInput,
+  TextField,
+} from "@mui/material";
 import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase.js";
 import type { CallbackOptions } from "autonumeric";
 
@@ -23,7 +29,13 @@ type Props<Component extends React.FunctionComponent> =
   Parameters<Component>[0] & { inputRef?: undefined };
 
 /** List of MUI components that with input-style behaviors. */
-const supportedMUIInputComponents = [TextField, OutlinedInput] as const;
+const supportedMUIInputComponents = [
+  TextField,
+  OutlinedInput,
+  Input,
+  FilledInput,
+  InputBase,
+] as const;
 
 // Creates AutoNumeric MUI components, absorbs much of the boilerplate.
 function createAutoNumericMUIComponent<
@@ -55,9 +67,16 @@ function createAutoNumericMUIComponent<
 export const AutoNumericTextField = createAutoNumericMUIComponent(TextField);
 export const AutoNumericOutlinedInput =
   createAutoNumericMUIComponent(OutlinedInput);
+export const AutoNumericFilledInput =
+  createAutoNumericMUIComponent(FilledInput);
+export const AutoNumericMaterialUIInput = createAutoNumericMUIComponent(Input);
+export const AutoNumericInputBase = createAutoNumericMUIComponent(InputBase);
 
 /** List of AutoNumeric MUI components. */
 export const autoNumericMUIComponents = [
   { name: "AutoNumericTextField", Component: AutoNumericTextField },
   { name: "AutoNumericOutlinedInput", Component: AutoNumericOutlinedInput },
+  { name: "AutoNumericFilledInput", Component: AutoNumericFilledInput },
+  { name: "AutoNumericMaterialUIInput", Component: AutoNumericMaterialUIInput },
+  { name: "AutoNumericInputBase", Component: AutoNumericInputBase },
 ] as const;

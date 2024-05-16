@@ -17,7 +17,7 @@
 
 import { render, screen } from "@testing-library/react";
 import AutoNumeric from "autonumeric";
-import { AutoNumericTextField } from "../lib/index";
+import { AutoNumericTextField } from "../lib/index.js";
 import { useState } from "react";
 import { userEvent } from "@testing-library/user-event";
 

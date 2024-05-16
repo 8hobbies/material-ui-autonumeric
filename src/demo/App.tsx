@@ -18,7 +18,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 
 import AutoNumeric from "autonumeric";
-import { AutoNumericTextField } from "../lib/AutoNumericTextField";
+import { AutoNumericTextField } from "../lib/AutoNumericTextField.js";
 import { useState } from "react";
 
 export default function App(): JSX.Element {

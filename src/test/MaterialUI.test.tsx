@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
+import AutoNumeric, { CallbackOptions } from "autonumeric";
 import {
   AutoNumericOutlinedInput,
   AutoNumericTextField,
 } from "../lib/index.js";
 import { render, screen } from "@testing-library/react";
-import AutoNumeric from "autonumeric";
 import { useState } from "react";
 import { userEvent } from "@testing-library/user-event";
 
@@ -35,9 +35,7 @@ for (const Component of [
     }: {
       props?: Parameters<typeof AutoNumericTextField>[0]["props"] &
         Parameters<typeof AutoNumericOutlinedInput>[0]["props"];
-      autoNumericOptions?: Parameters<
-        typeof AutoNumericTextField
-      >[0]["autoNumericOptions"];
+      autoNumericOptions?: CallbackOptions;
     }): JSX.Element {
       const [state, setState] = useState("");
       return (
@@ -101,22 +99,20 @@ for (const Component of [
     }
 
     test("Controlled AutoNumeric component changes the input state", async () => {
-      function ControlledAutoNumericTextFieldWrapperWithState({
+      function ControlledAutoNumericComponentWrapperWithState({
         stateParent,
       }: {
         stateParent: { state: string };
       }): JSX.Element {
         const [state, setState] = useState("");
         stateParent.state = state;
-        return (
-          <AutoNumericTextField valueState={{ state, stateSetter: setState }} />
-        );
+        return <Component valueState={{ state, stateSetter: setState }} />;
       }
 
       const stateParent = { state: "" };
       const user = userEvent.setup();
       render(
-        <ControlledAutoNumericTextFieldWrapperWithState
+        <ControlledAutoNumericComponentWrapperWithState
           stateParent={stateParent}
         />,
       );
@@ -127,22 +123,20 @@ for (const Component of [
     });
 
     test("Controlled AutoNumeric component changes the input state", async () => {
-      function ControlledAutoNumericTextFieldWrapperWithState({
+      function ControlledAutoNumericComponentWrapperWithState({
         stateParent,
       }: {
         stateParent: { state: string };
       }): JSX.Element {
         const [state, setState] = useState("");
         stateParent.state = state;
-        return (
-          <AutoNumericTextField valueState={{ state, stateSetter: setState }} />
-        );
+        return <Component valueState={{ state, stateSetter: setState }} />;
       }
 
       const stateParent = { state: "" };
       const user = userEvent.setup();
       render(
-        <ControlledAutoNumericTextFieldWrapperWithState
+        <ControlledAutoNumericComponentWrapperWithState
           stateParent={stateParent}
         />,
       );
@@ -152,7 +146,7 @@ for (const Component of [
       expect(stateParent.state).toBe("1,111");
     });
 
-    test("Changing the input state of AutoNumericTextField changes the display value", async () => {
+    test("Changing the input state changes the display value", async () => {
       function TestApp(): JSX.Element {
         const [state, setState] = useState("");
         return (
@@ -162,9 +156,7 @@ for (const Component of [
                 setState(AutoNumeric.format("1111"));
               }}
             />
-            <AutoNumericTextField
-              valueState={{ state, stateSetter: setState }}
-            />
+            <Component valueState={{ state, stateSetter: setState }} />
           </>
         );
       }
@@ -183,7 +175,7 @@ for (const Component of [
         const [state, setState] = useState("1");
         return (
           <>
-            <AutoNumericTextField
+            <Component
               valueState={{ state, stateSetter: setState }}
               autoNumericOptions={{ emptyInputBehavior: "zero" }}
             />

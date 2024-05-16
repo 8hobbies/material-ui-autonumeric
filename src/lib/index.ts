@@ -15,6 +15,6 @@
  * limitations under the License.
  */
 
-export * from "./AutoNumericTextField.js";
+export * from "./MaterialUI.js";
 
-export type * from "./AutoNumericTextField.d.ts";
+export type * from "./MaterialUI.d.ts";

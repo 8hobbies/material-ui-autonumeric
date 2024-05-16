@@ -15,12 +15,10 @@
  * limitations under the License.
  */
 
-import "bootstrap/dist/css/bootstrap.css";
-
 import {
   AutoNumericOutlinedInput,
   AutoNumericTextField,
-} from "../lib/AutoNumericTextField.js";
+} from "../lib/index.js";
 import { Button, Stack, Typography } from "@mui/material";
 import AutoNumeric from "autonumeric";
 import { useState } from "react";

@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
+import { OutlinedInput, TextField } from "@mui/material";
 import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase.js";
 import type { CallbackOptions } from "autonumeric";
-import { TextField } from "@mui/material";
 
 type InputProps = Omit<Parameters<typeof TextField>[0], "inputRef">;
 
 export function AutoNumericTextField({
-  textFieldProps,
+  props,
   autoNumericOptions,
   valueState,
 }: {
-  textFieldProps?: Readonly<InputProps>;
+  props?: Readonly<InputProps>;
   autoNumericOptions?: Readonly<CallbackOptions>;
   valueState?: {
     state: Readonly<string>;
@@ -36,7 +36,29 @@ export function AutoNumericTextField({
   return (
     <AutoNumericMUIInputBase
       comp={TextField}
-      props={textFieldProps}
+      props={props}
+      autoNumericOptions={autoNumericOptions}
+      valueState={valueState}
+    />
+  );
+}
+
+export function AutoNumericOutlinedInput({
+  props,
+  autoNumericOptions,
+  valueState,
+}: {
+  props?: Readonly<InputProps>;
+  autoNumericOptions?: Readonly<CallbackOptions>;
+  valueState?: {
+    state: Readonly<string>;
+    stateSetter: React.Dispatch<React.SetStateAction<string>>;
+  };
+}): JSX.Element {
+  return (
+    <AutoNumericMUIInputBase
+      comp={OutlinedInput}
+      props={props}
       autoNumericOptions={autoNumericOptions}
       valueState={valueState}
     />

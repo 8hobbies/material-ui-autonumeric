@@ -22,10 +22,10 @@ import { useState } from "react";
 import { userEvent } from "@testing-library/user-event";
 
 function ControlledAutoNumericTextFieldWrapper({
-  inputProps,
+  textFieldProps,
   autoNumericOptions,
 }: {
-  inputProps?: Parameters<typeof AutoNumericTextField>[0]["inputProps"];
+  textFieldProps?: Parameters<typeof AutoNumericTextField>[0]["textFieldProps"];
   autoNumericOptions?: Parameters<
     typeof AutoNumericTextField
   >[0]["autoNumericOptions"];
@@ -33,7 +33,7 @@ function ControlledAutoNumericTextFieldWrapper({
   const [state, setState] = useState("");
   return (
     <AutoNumericTextField
-      inputProps={inputProps}
+      textFieldProps={textFieldProps}
       autoNumericOptions={autoNumericOptions}
       valueState={{ state, stateSetter: setState }}
     />
@@ -62,7 +62,7 @@ for (const testCase of [
     const user = userEvent.setup();
     render(
       <testCase.Component
-        inputProps={{
+        textFieldProps={{
           onChange: () => {
             counter += 1;
           },

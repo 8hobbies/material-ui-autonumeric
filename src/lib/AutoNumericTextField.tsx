@@ -15,51 +15,30 @@
  * limitations under the License.
  */
 
-import { AutoNumericComponent } from "react-autonumeric/dist/AutoNumericComponent";
+import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase";
 import type { CallbackOptions } from "autonumeric";
-import type { ChangeEvent } from "react";
 import { TextField } from "@mui/material";
 
 type InputProps = Omit<Parameters<typeof TextField>[0], "inputRef">;
 
 export function AutoNumericTextField({
-  inputProps,
+  textFieldProps,
   autoNumericOptions,
   valueState,
 }: {
-  inputProps?: Readonly<InputProps>;
+  textFieldProps?: Readonly<InputProps>;
   autoNumericOptions?: Readonly<CallbackOptions>;
   valueState?: {
     state: Readonly<string>;
     stateSetter: React.Dispatch<React.SetStateAction<string>>;
   };
 }): JSX.Element {
-  const stateProps =
-    valueState !== undefined
-      ? ({
-          value: valueState.state,
-          onChange: (e: ChangeEvent<HTMLInputElement>): void => {
-            // For input, it is required set value in onChange.
-            valueState.stateSetter(e.currentTarget.value);
-            if (inputProps?.onChange !== undefined) {
-              inputProps.onChange(e);
-            }
-          },
-          onBlur: (e): void => {
-            valueState.stateSetter(e.currentTarget.value);
-            if (inputProps?.onBlur !== undefined) {
-              inputProps.onBlur(e);
-            }
-          },
-        } satisfies Parameters<typeof TextField>[0])
-      : {};
   return (
-    <AutoNumericComponent
-      element={TextField}
-      refKey="inputRef"
-      props={{ ...inputProps, ...stateProps }}
+    <AutoNumericMUIInputBase
+      comp={TextField}
+      props={textFieldProps}
       autoNumericOptions={autoNumericOptions}
-      state={valueState?.state}
+      valueState={valueState}
     />
   );
 }

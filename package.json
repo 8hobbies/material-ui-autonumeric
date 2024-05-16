@@ -40,7 +40,7 @@
     "autonumeric"
   ],
   "dependencies": {
-    "react-autonumeric": "^2.0.1"
+    "react-autonumeric": "^2.0.2"
   },
   "devDependencies": {
     "@8hobbies/eslint-conf-baseline": "^2.1.0",

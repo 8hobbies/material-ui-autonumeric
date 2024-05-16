@@ -33,7 +33,9 @@ export default function App(): JSX.Element {
       <div className="form-group mb-3">
         <label>
           Most basic usage
-          <AutoNumericTextField inputProps={{ className: "form-control" }} />
+          <AutoNumericTextField
+            textFieldProps={{ className: "form-control" }}
+          />
         </label>
       </div>
 
@@ -41,7 +43,10 @@ export default function App(): JSX.Element {
         <label>
           Customize the input
           <AutoNumericTextField
-            inputProps={{ defaultValue: "99.99", className: "form-control" }}
+            textFieldProps={{
+              defaultValue: "99.99",
+              className: "form-control",
+            }}
             autoNumericOptions={{ suffixText: "%" }}
           />
         </label>
@@ -51,7 +56,10 @@ export default function App(): JSX.Element {
         <label>
           Use predefined AutoNumeric options
           <AutoNumericTextField
-            inputProps={{ defaultValue: "10000", className: "form-control" }}
+            textFieldProps={{
+              defaultValue: "10000",
+              className: "form-control",
+            }}
             autoNumericOptions={
               AutoNumeric.getPredefinedOptions().commaDecimalCharDotSeparator
             }
@@ -63,7 +71,7 @@ export default function App(): JSX.Element {
         <label>
           Interact with AutoNumericTextField via a React state
           <AutoNumericTextField
-            inputProps={{ className: "form-control" }}
+            textFieldProps={{ className: "form-control" }}
             valueState={{
               state: controlledInputState,
               stateSetter: setControlledInputState,

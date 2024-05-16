@@ -17,6 +17,9 @@
 
 import AutoNumeric, { CallbackOptions } from "autonumeric";
 import {
+  AutoNumericFilledInput,
+  AutoNumericInputBase,
+  AutoNumericMaterialUIInput,
   AutoNumericOutlinedInput,
   AutoNumericTextField,
   autoNumericMUIComponents,
@@ -33,7 +36,10 @@ for (const component of autoNumericMUIComponents) {
       autoNumericOptions,
     }: {
       props?: Parameters<typeof AutoNumericTextField>[0]["props"] &
-        Parameters<typeof AutoNumericOutlinedInput>[0]["props"];
+        Parameters<typeof AutoNumericOutlinedInput>[0]["props"] &
+        Parameters<typeof AutoNumericFilledInput>[0]["props"] &
+        Parameters<typeof AutoNumericMaterialUIInput>[0]["props"] &
+        Parameters<typeof AutoNumericInputBase>[0]["props"];
       autoNumericOptions?: CallbackOptions;
     }): JSX.Element {
       const [state, setState] = useState("");

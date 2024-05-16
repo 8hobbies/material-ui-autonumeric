@@ -18,7 +18,7 @@
     "coverage": "vitest run --coverage --typecheck",
     "doc": "typedoc && replace-in-files --string '=\"assets/' --replacement '=\"/assets/' docs/404.html && npm run build_demo",
     "format": "eslint --fix . && prettier . --write",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
+    "lint": "npm run compile && eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
     "prepack": "npm run clean && npm run compile",
     "preview": "vite preview",
     "test": "vitest --typecheck",

@@ -19,14 +19,12 @@ import { OutlinedInput, TextField } from "@mui/material";
 import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase.js";
 import type { CallbackOptions } from "autonumeric";
 
-type InputProps = Omit<Parameters<typeof TextField>[0], "inputRef">;
-
 export function AutoNumericTextField({
   props,
   autoNumericOptions,
   valueState,
 }: {
-  props?: Readonly<InputProps>;
+  props?: Readonly<Omit<Parameters<typeof TextField>[0], "inputRef">>;
   autoNumericOptions?: Readonly<CallbackOptions>;
   valueState?: {
     state: Readonly<string>;
@@ -48,7 +46,7 @@ export function AutoNumericOutlinedInput({
   autoNumericOptions,
   valueState,
 }: {
-  props?: Readonly<InputProps>;
+  props?: Readonly<Omit<Parameters<typeof OutlinedInput>[0], "inputRef">>;
   autoNumericOptions?: Readonly<CallbackOptions>;
   valueState?: {
     state: Readonly<string>;

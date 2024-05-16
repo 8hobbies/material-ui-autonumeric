@@ -17,78 +17,92 @@
 
 import "bootstrap/dist/css/bootstrap.css";
 
+import {
+  AutoNumericOutlinedInput,
+  AutoNumericTextField,
+} from "../lib/AutoNumericTextField.js";
+import { Button, Stack, Typography } from "@mui/material";
 import AutoNumeric from "autonumeric";
-import { AutoNumericTextField } from "../lib/AutoNumericTextField.js";
 import { useState } from "react";
 
-export default function App(): JSX.Element {
+type DemoComponent =
+  | typeof AutoNumericTextField
+  | typeof AutoNumericOutlinedInput;
+
+function Demo({ Comp }: { Comp: DemoComponent }): JSX.Element {
   const [controlledInputState, setControlledInputState] = useState(
     AutoNumeric.format("100000"),
   );
+
   return (
     <>
-      <h1>
-        <a href="https://mui-autonumeric.8hob.io">MUI-AutoNumeric</a> Demo
-      </h1>
-      <div className="form-group mb-3">
-        <label>
-          Most basic usage
-          <AutoNumericTextField props={{ className: "form-control" }} />
-        </label>
+      <Typography variant="h2">{Comp.name}</Typography>
+      <div>
+        <Comp
+          props={{
+            label: "Most basic usage",
+          }}
+        />
       </div>
 
-      <div className="form-group mb-3">
-        <label>
-          Customize the input
-          <AutoNumericTextField
-            props={{
-              defaultValue: "99.99",
-              className: "form-control",
-            }}
-            autoNumericOptions={{ suffixText: "%" }}
-          />
-        </label>
+      <div>
+        <Comp
+          props={{
+            label: "Customize the input",
+            defaultValue: "99.99",
+            className: "form-control",
+          }}
+          autoNumericOptions={{ suffixText: "%" }}
+        />
       </div>
 
-      <div className="form-group mb-3">
-        <label>
-          Use predefined AutoNumeric options
-          <AutoNumericTextField
-            props={{
-              defaultValue: "10000",
-              className: "form-control",
-            }}
-            autoNumericOptions={
-              AutoNumeric.getPredefinedOptions().commaDecimalCharDotSeparator
-            }
-          />
-        </label>
+      <div>
+        <Comp
+          props={{
+            label: "Use predefined AutoNumeric options",
+            defaultValue: "10000",
+            className: "form-control",
+          }}
+          autoNumericOptions={
+            AutoNumeric.getPredefinedOptions().commaDecimalCharDotSeparator
+          }
+        />
       </div>
 
-      <div className="form-group mb-3">
-        <label>
-          Interact with AutoNumericTextField via a React state
-          <AutoNumericTextField
-            props={{ className: "form-control" }}
-            valueState={{
-              state: controlledInputState,
-              stateSetter: setControlledInputState,
-            }}
-          />
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              setControlledInputState(
-                (
-                  Number(AutoNumeric.unformat(controlledInputState)) + 1
-                ).toString(),
-              );
-            }}
-          >
-            Add one
-          </button>
-        </label>
+      <div>
+        <Comp
+          props={{ label: "Interact with Comp via a React state" }}
+          valueState={{
+            state: controlledInputState,
+            stateSetter: setControlledInputState,
+          }}
+        />
+        <Button
+          onClick={() => {
+            setControlledInputState(
+              (
+                Number(AutoNumeric.unformat(controlledInputState)) + 1
+              ).toString(),
+            );
+          }}
+        >
+          Add one
+        </Button>
       </div>
+    </>
+  );
+}
+
+export default function App(): JSX.Element {
+  return (
+    <>
+      <Stack alignItems="center">
+        <Typography variant="h1">
+          <a href="https://mui-autonumeric.8hob.io">MUI-AutoNumeric</a> Demo
+        </Typography>
+        <Demo Comp={AutoNumericTextField} />
+        <Demo Comp={AutoNumericOutlinedInput} />
+      </Stack>
     </>
   );
 }

@@ -24,13 +24,17 @@ import AutoNumeric from "autonumeric";
 import { useState } from "react";
 import { userEvent } from "@testing-library/user-event";
 
-for (const Component of [AutoNumericTextField, AutoNumericOutlinedInput]) {
+for (const Component of [
+  AutoNumericTextField,
+  AutoNumericOutlinedInput,
+] as const) {
   describe(Component.name, () => {
     function ControlledAutoNumericComponentWrapper({
       props,
       autoNumericOptions,
     }: {
-      props?: Parameters<typeof AutoNumericTextField>[0]["props"];
+      props?: Parameters<typeof AutoNumericTextField>[0]["props"] &
+        Parameters<typeof AutoNumericOutlinedInput>[0]["props"];
       autoNumericOptions?: Parameters<
         typeof AutoNumericTextField
       >[0]["autoNumericOptions"];

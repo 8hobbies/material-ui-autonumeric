@@ -10,7 +10,7 @@
     "typedoc-plugin-mdn-links",
     "typedoc-plugin-rename-defaults"
   ],
-  "sitemapBaseUrl": "https://mui-autonumeric.8hob.io",
+  "sitemapBaseUrl": "https://material-ui-autonumeric.8hob.io",
   "externalSymbolLinkMappings": {
     "global": {
       "AutoNumeric": "https://docs.autonumeric.org/Documentation/methods/"

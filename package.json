@@ -1,17 +1,20 @@
 {
-  "name": "mui-autonumeric",
-  "description": "AutoNumeric-Powered MUI Components. AutoNumeric is a powerful library that automatically format numbers and currencies. MUI-AutoNumeric brings that power to MUI.",
+  "name": "material-ui-autonumeric",
+  "description": "AutoNumeric-Powered Material UI Components. AutoNumeric is a powerful library that automatically format numbers and currencies. Material UI-AutoNumeric brings that power to Material UI.",
   "version": "1.0.0",
   "type": "module",
+  "main": "dist/index.js",
+  "browser": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "*.d.ts",
-    "*.js"
+    "/dist/*.d.ts",
+    "/dist/*.js"
   ],
   "scripts": {
     "build_demo": "npm run compile && vite build",
     "clean": "rimraf dist/",
     "dev": "vite",
-    "compile": "tsc --build . src/lib src/test src/demo && ncp package.json dist/package.json",
+    "compile": "tsc --build . src/lib src/test src/demo",
     "coverage": "vitest run --coverage --typecheck",
     "doc": "typedoc && replace-in-files --string '=\"assets/' --replacement '=\"/assets/' docs/404.html && npm run build_demo",
     "format": "npm run compile && eslint --fix . && prettier . --write",
@@ -24,17 +27,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/8hobbies/mui-autonumeric.git"
+    "url": "git+https://github.com/8hobbies/material-ui-autonumeric.git"
   },
   "author": "8 Hobbies, LLC",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/8hobbies/mui-autonumeric/issues"
+    "url": "https://github.com/8hobbies/material-ui-autonumeric/issues"
   },
-  "homepage": "https://mui-autonumeric.8hob.io",
+  "homepage": "https://material-ui-autonumeric.8hob.io",
   "keywords": [
     "react",
     "mui",
+    "material-ui",
     "autonumeric"
   ],
   "dependencies": {
@@ -61,7 +65,6 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "globals": "^15.2.0",
     "jsdom": "^24.0.0",
-    "ncp": "^2.0.0",
     "prettier": "^3.2.5",
     "replace-in-files-cli": "^2.2.0",
     "rimraf": "^5.0.7",
@@ -76,10 +79,5 @@
   },
   "peerDependencies": {
     "@mui/material": "^5.15.17"
-  },
-  "peerDependenciesMeta": {
-    "@mui/material": {
-      "optional": true
-    }
   }
 }

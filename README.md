@@ -1,17 +1,17 @@
-# MUI-AutoNumeric: [AutoNumeric][]-Powered MUI Components
+# Material UI-AutoNumeric: [AutoNumeric][]-Powered Material UI Components
 
-[![npm version](https://badge.fury.io/js/mui-autonumeric.svg)](https://badge.fury.io/js/mui-autonumeric)
-[![Pipeline](https://github.com/8hobbies/mui-autonumeric/actions/workflows/runtime.yml/badge.svg)](https://github.com/8hobbies/mui-autonumeric/actions/workflows/runtime.yml)
-[![GitLab Mirror](https://img.shields.io/badge/GitLab-mirror-blue?logo=gitlab)](https://gitlab.com/8hobbies/mui-autonumeric)
-[![Demo](https://img.shields.io/badge/Demo-blue)](https://mui-autonumeric.8hob.io/demo)
+[![npm version](https://badge.fury.io/js/material-ui-autonumeric.svg)](https://badge.fury.io/js/material-ui-autonumeric)
+[![Pipeline](https://github.com/8hobbies/material-ui-autonumeric/actions/workflows/runtime.yml/badge.svg)](https://github.com/8hobbies/material-ui-autonumeric/actions/workflows/runtime.yml)
+[![GitLab Mirror](https://img.shields.io/badge/GitLab-mirror-blue?logo=gitlab)](https://gitlab.com/8hobbies/material-ui-autonumeric)
+[![Demo](https://img.shields.io/badge/Demo-blue)](https://material-ui-autonumeric.8hob.io/demo)
 
 [AutoNumeric][] is a powerful library that automatically format numbers and currencies.
-MUI-AutoNumeric brings that power to React.
+Material UI-AutoNumeric brings that power to React.
 
 ## Install
 
 ```
-npm install --save mui-autonumeric
+npm install --save material-ui-autonumeric
 ```
 
 ### API References
@@ -37,4 +37,4 @@ limitations under the License.
 ```
 
 [AutoNumeric]: https://autonumeric.org/
-[API References]: https://mui-autonumeric.8hob.io
+[API References]: https://material-ui-autonumeric.8hob.io

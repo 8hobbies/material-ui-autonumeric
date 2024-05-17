@@ -18,7 +18,7 @@
 import {
   AutoNumericTextField,
   autoNumericMUIComponents,
-} from "../lib/MaterialUI.js";
+} from "../lib/index.js";
 import {
   Button,
   FormControl,
@@ -148,7 +148,10 @@ export default function App(): JSX.Element {
     <ThemeProvider theme={theme}>
       <Stack alignItems="center" spacing={2}>
         <Typography variant="h1">
-          <a href="https://mui-autonumeric.8hob.io">MUI-AutoNumeric</a> Demo
+          <a href="https://material-ui-autonumeric.8hob.io">
+            Material UI-AutoNumeric
+          </a>{" "}
+          Demo
         </Typography>
         {autoNumericMUIComponents.map((comp) => (
           <Demo name={comp.name} Comp={comp.Component} />

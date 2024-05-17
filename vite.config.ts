@@ -7,7 +7,7 @@ export default defineConfig({
   root: "src/demo",
   base: "/demo/",
   build: {
-    outDir: join(import.meta.dirname, "docs/demo"),
+    outDir: join(import.meta.dirname, "docs/build/demo"),
     emptyOutDir: true,
   },
   test: {

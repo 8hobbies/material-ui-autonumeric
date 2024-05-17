@@ -24,7 +24,9 @@ import {
   FormControl,
   InputLabel,
   Stack,
+  ThemeProvider,
   Typography,
+  createTheme,
 } from "@mui/material";
 import AutoNumeric from "autonumeric";
 import { useState } from "react";
@@ -131,8 +133,19 @@ function Demo({
 }
 
 export default function App(): JSX.Element {
+  const theme = createTheme({
+    typography: {
+      h1: {
+        fontSize: "3.25rem",
+      },
+      h2: {
+        fontSize: "2.5rem",
+      },
+    },
+  });
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Stack alignItems="center" spacing={2}>
         <Typography variant="h1">
           <a href="https://mui-autonumeric.8hob.io">MUI-AutoNumeric</a> Demo
@@ -141,6 +154,6 @@ export default function App(): JSX.Element {
           <Demo name={comp.name} Comp={comp.Component} />
         ))}
       </Stack>
-    </>
+    </ThemeProvider>
   );
 }

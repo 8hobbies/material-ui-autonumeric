@@ -13,7 +13,8 @@ dist
 dist-ssr
 *.local
 *.tsbuildinfo
-/docs
+.docusaurus
+/docs/build
 
 # Editor directories and files
 .vscode/*

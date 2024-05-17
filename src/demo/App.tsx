@@ -16,17 +16,20 @@
  */
 
 import {
-  AutoNumericOutlinedInput,
   AutoNumericTextField,
   autoNumericMUIComponents,
 } from "../lib/MaterialUI.js";
-import { Button, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  Stack,
+  Typography,
+} from "@mui/material";
 import AutoNumeric from "autonumeric";
 import { useState } from "react";
 
-type DemoComponent =
-  | typeof AutoNumericTextField
-  | typeof AutoNumericOutlinedInput;
+type DemoComponent = (typeof autoNumericMUIComponents)[number]["Component"];
 
 function Demo({
   name,
@@ -35,6 +38,13 @@ function Demo({
   name: string;
   Comp: DemoComponent;
 }): JSX.Element {
+  const basicUsageLabel = "Most basic usage" as const;
+  const customInputLabel = "Customize the input" as const;
+  const predefinedAutoNumericOptionsLabel =
+    "Use predefined AutoNumeric options" as const;
+  const interactionLabel = "Interact with Comp via a React state" as const;
+  const isTextField = Comp === AutoNumericTextField;
+
   const [controlledInputState, setControlledInputState] = useState(
     AutoNumeric.format("100000"),
   );
@@ -42,47 +52,69 @@ function Demo({
   return (
     <>
       <Typography variant="h2">{name}</Typography>
-      <div>
+      <FormControl variant="standard">
+        {!isTextField && (
+          <InputLabel htmlFor={`basic-usage-${name}`}>
+            {basicUsageLabel}
+          </InputLabel>
+        )}
         <Comp
           props={{
-            label: "Most basic usage",
+            id: `basic-usage-${name}`,
+            label: basicUsageLabel,
           }}
         />
-      </div>
+      </FormControl>
 
-      <div>
+      <FormControl variant="standard">
+        {!isTextField && (
+          <InputLabel htmlFor={`custom-input-${name}`}>
+            {customInputLabel}
+          </InputLabel>
+        )}
         <Comp
           props={{
-            label: "Customize the input",
+            id: `custom-input-${name}`,
+            label: customInputLabel,
             defaultValue: "99.99",
-            className: "form-control",
           }}
           autoNumericOptions={{ suffixText: "%" }}
         />
-      </div>
+      </FormControl>
 
-      <div>
+      <FormControl variant="standard">
+        {!isTextField && (
+          <InputLabel htmlFor={`predefined-auto-numeric-options-${name}`}>
+            {predefinedAutoNumericOptionsLabel}
+          </InputLabel>
+        )}
         <Comp
           props={{
-            label: "Use predefined AutoNumeric options",
+            id: `predefined-auto-numeric-options-${name}`,
+            label: predefinedAutoNumericOptionsLabel,
             defaultValue: "10000",
-            className: "form-control",
           }}
           autoNumericOptions={
             AutoNumeric.getPredefinedOptions().commaDecimalCharDotSeparator
           }
         />
-      </div>
+      </FormControl>
 
-      <div>
+      <FormControl variant="standard">
+        {!isTextField && (
+          <InputLabel htmlFor={`interaction-${name}`}>
+            {interactionLabel}
+          </InputLabel>
+        )}
         <Comp
-          props={{ label: "Interact with Comp via a React state" }}
+          props={{ id: `interaction-${name}`, label: interactionLabel }}
           valueState={{
             state: controlledInputState,
             stateSetter: setControlledInputState,
           }}
         />
         <Button
+          variant="contained"
           onClick={() => {
             setControlledInputState(
               (
@@ -93,7 +125,7 @@ function Demo({
         >
           Add one
         </Button>
-      </div>
+      </FormControl>
     </>
   );
 }
@@ -101,7 +133,7 @@ function Demo({
 export default function App(): JSX.Element {
   return (
     <>
-      <Stack alignItems="center">
+      <Stack alignItems="center" spacing={2}>
         <Typography variant="h1">
           <a href="https://mui-autonumeric.8hob.io">MUI-AutoNumeric</a> Demo
         </Typography>

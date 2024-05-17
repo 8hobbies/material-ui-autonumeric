@@ -25,11 +25,8 @@ const config: Config = {
       "classic",
       {
         docs: {
-          sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/8hobbies/material-ui-autonumeric/tree/master/",
         },
       } satisfies Preset.Options,
     ],
@@ -44,10 +41,9 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
+          href: "https://material-ui-autonumeric.8hob.io/demo",
+          position: "right",
+          label: "Demo",
         },
         {
           href: "https://github.com/8hobbies/material-ui-autonumeric",
@@ -60,19 +56,14 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
           title: "Community",
           items: [
             {
-              label: "GitHub Discussions",
+              label: "Report Bugs",
+              href: "https://github.com/8hobbies/material-ui-autonumeric/issues",
+            },
+            {
+              label: "Discussions",
               href: "https://github.com/8hobbies/material-ui-autonumeric/discussions",
             },
           ],
@@ -82,7 +73,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/8hobbies/material-ui-autonumeric",
             },
           ],
         },
@@ -92,6 +83,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ["bash"],
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -32,6 +32,5 @@ jobs:
       - run: rm README.md && cp docs/src/pages/index.md README.md
       - run: npm run pack
       - run: npm publish
-        working-directory: dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

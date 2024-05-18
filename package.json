@@ -19,7 +19,7 @@
     "doc": "cd docs && npm run build && cd .. && npm run build_demo",
     "format": "npm run compile && eslint --fix . && prettier . --write",
     "lint": "npm run compile && eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
-    "pack": "npm run clean && npm run compile && cd dist && npm pack",
+    "pack": "npm run clean && npm run compile && npm pack",
     "preview": "vite preview",
     "test": "vitest --typecheck",
     "test-once": "npm run coverage",

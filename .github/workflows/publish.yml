@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: "22.x"
           registry-url: "https://registry.npmjs.org"
+      - run: npm install
       # npm pack doesn't recognize symlinks well.
       - run: rm README.md && cp docs/src/pages/index.md README.md
       - run: npm run pack

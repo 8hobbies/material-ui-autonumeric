@@ -24,10 +24,7 @@ const config: Config = {
     [
       "classic",
       {
-        docs: {
-          editUrl:
-            "https://github.com/8hobbies/material-ui-autonumeric/tree/master/",
-        },
+        docs: false,
       } satisfies Preset.Options,
     ],
   ],

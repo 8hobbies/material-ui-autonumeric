@@ -119,6 +119,10 @@ run `npm run test-once`. To build for production, run `npm pack`. To build the d
 
 To send your contribution, open a [pull request][].
 
+## Related Project
+
+If you use [React][] but not Material UI, check out [react-autonumeric][].
+
 ## License
 
 ```text
@@ -145,3 +149,5 @@ limitations under the License.
 [Material UI]: https://mui.com/material-ui/
 [TextField component]: https://mui.com/material-ui/api/text-field/
 [`Input`]: https://mui.com/material-ui/api/input/
+[React]: https://react.dev/
+[react-autonumeric]: https://react-autonumeric.8hob.io/

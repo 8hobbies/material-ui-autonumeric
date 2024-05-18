@@ -113,9 +113,10 @@ Source code is available on [GitHub][].
 
 To report a bug, visit the [issue tracker][].
 
-After obtaining the source code, first run `npm install` within the source directory. To run test,
-run `npm run test-once`. To build for production, run `npm pack`. To build the documentation, run
-`npm run doc`.
+After obtaining the source code, first run `npm install` from the source
+directory. To run test, run `npm run test-once`. To build for production, run
+`npm pack`. To build the documentation, run `npm install` from the `docs/`
+directory and then run `npm run doc` from the root source directory.
 
 To send your contribution, open a [pull request][].
 

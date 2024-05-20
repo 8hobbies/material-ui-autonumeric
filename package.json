@@ -49,7 +49,7 @@
     "@8hobbies/typedoc-plugin-404": "^2.2.0",
     "@8hobbies/typedoc-plugin-plausible": "^1.0.2",
     "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.15.17",
+    "@mui/material": "^5.15.18",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
@@ -77,6 +77,6 @@
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "@mui/material": "^5.15.17"
+    "@mui/material": "^5.15.18"
   }
 }

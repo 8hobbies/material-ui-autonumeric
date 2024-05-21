@@ -1,32 +1,13 @@
-import configs from "@8hobbies/eslint-conf-baseline";
-import globals from "globals";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
+import { default as baseConfigs } from "@8hobbies/eslint-conf-baseline";
+import configs from "@8hobbies/eslint-conf-react-baseline";
+
+const reactConfig = configs.recommended(import.meta.dirname, true);
+reactConfig[reactConfig.length - 1].files = ["**/*.ts", "**/*.tsx"];
 
 export default [
   {
     ignores: ["./types/"],
   },
-  ...configs.recommended,
-  {
-    files: ["**/*.ts", "**/*.tsx"],
-    plugins: {
-      react,
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
-    },
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-    },
-  },
+  ...baseConfigs.recommended,
+  ...reactConfig,
 ];

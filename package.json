@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@8hobbies/eslint-conf-baseline": "^2.1.0",
+    "@8hobbies/eslint-conf-react-baseline": "^1.0.3",
     "@8hobbies/typedoc-plugin-404": "^2.2.0",
     "@8hobbies/typedoc-plugin-plausible": "^1.0.2",
     "@emotion/styled": "^11.11.5",
@@ -60,10 +61,6 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.6.0",
-    "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "globals": "^15.2.0",
     "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.7",

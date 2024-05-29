@@ -5,7 +5,7 @@
 [![GitLab Mirror](https://img.shields.io/badge/GitLab-mirror-blue?logo=gitlab)](https://gitlab.com/8hobbies/material-ui-autonumeric)
 [![Demo](https://img.shields.io/badge/Demo-blue)](https://material-ui-autonumeric.8hob.io/demo)
 
-[AutoNumeric][] is a powerful library that automatically format numbers and currencies.
+[AutoNumeric][] is a powerful library that automatically formats numbers and currencies.
 Material UI-AutoNumeric brings that power to [Material UI][].
 
 ## Install

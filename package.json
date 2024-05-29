@@ -1,6 +1,6 @@
 {
   "name": "material-ui-autonumeric",
-  "description": "AutoNumeric-Powered Material UI Components. AutoNumeric is a powerful library that automatically format numbers and currencies. Material UI-AutoNumeric brings that power to Material UI.",
+  "description": "AutoNumeric-Powered Material UI Components. AutoNumeric is a powerful library that automatically formats numbers and currencies. Material UI-AutoNumeric brings that power to Material UI.",
   "version": "1.0.1",
   "type": "module",
   "main": "dist/index.js",

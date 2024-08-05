@@ -45,8 +45,8 @@
     "react-autonumeric": "^2.0.2"
   },
   "devDependencies": {
-    "@8hobbies/eslint-conf-baseline": "^2.1.1",
-    "@8hobbies/eslint-conf-react-baseline": "^1.0.4",
+    "@8hobbies/eslint-conf-baseline": "^4.0.0",
+    "@8hobbies/eslint-conf-react-baseline": "^2.0.0",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.6",
     "@testing-library/jest-dom": "^6.4.8",
@@ -54,7 +54,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.14.13",
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",

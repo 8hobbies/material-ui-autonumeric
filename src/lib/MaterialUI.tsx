@@ -29,17 +29,16 @@ type Props<Component extends React.FunctionComponent> =
   Parameters<Component>[0] & { inputRef?: undefined };
 
 /** List of MUI components that with input-style behaviors. */
-const supportedMUIInputComponents = [
-  TextField,
-  OutlinedInput,
-  Input,
-  FilledInput,
-  InputBase,
-] as const;
+type SupportedMUIInputComponents =
+  | typeof TextField
+  | typeof OutlinedInput
+  | typeof Input
+  | typeof FilledInput
+  | typeof InputBase;
 
 // Creates AutoNumeric MUI components, absorbs much of the boilerplate.
 function createAutoNumericMUIComponent<
-  Component extends (typeof supportedMUIInputComponents)[number],
+  Component extends SupportedMUIInputComponents,
 >(comp: Component) {
   return ({
     props,

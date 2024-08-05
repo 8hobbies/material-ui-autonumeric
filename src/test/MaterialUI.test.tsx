@@ -17,11 +17,11 @@
 
 import AutoNumeric, { CallbackOptions } from "autonumeric";
 import {
-  AutoNumericFilledInput,
-  AutoNumericInputBase,
-  AutoNumericMaterialUIInput,
-  AutoNumericOutlinedInput,
-  AutoNumericTextField,
+  type AutoNumericFilledInput,
+  type AutoNumericInputBase,
+  type AutoNumericMaterialUIInput,
+  type AutoNumericOutlinedInput,
+  type AutoNumericTextField,
   autoNumericMUIComponents,
 } from "../lib/MaterialUI.js";
 import { render, screen } from "@testing-library/react";

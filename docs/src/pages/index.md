@@ -14,6 +14,8 @@ Material UI-AutoNumeric brings that power to [Material UI][].
 npm install --save material-ui-autonumeric
 ```
 
+(If you are on an earlier MUI version such as v5, install v1.x of this package.)
+
 ## Usage
 
 The usage examples below use `AutoNumericTextField`. The usage is similar for:

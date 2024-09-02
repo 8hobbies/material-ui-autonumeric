@@ -24,8 +24,8 @@ import {
   type AutoNumericTextField,
   autoNumericMUIComponents,
 } from "../lib/MaterialUI.js";
+import { type JSX, useState } from "react";
 import { render, screen } from "@testing-library/react";
-import { useState } from "react";
 import { userEvent } from "@testing-library/user-event";
 
 for (const component of autoNumericMUIComponents) {

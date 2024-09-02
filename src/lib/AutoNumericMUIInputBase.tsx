@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import type { ChangeEvent, ChangeEventHandler } from "react";
+import type { ChangeEvent, ChangeEventHandler, JSX } from "react";
 import { AutoNumericComponent } from "react-autonumeric";
 import type { CallbackOptions } from "autonumeric";
 

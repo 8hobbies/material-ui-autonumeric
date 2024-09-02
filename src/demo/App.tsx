@@ -28,8 +28,8 @@ import {
   Typography,
   createTheme,
 } from "@mui/material";
+import { type JSX, useState } from "react";
 import AutoNumeric from "autonumeric";
-import { useState } from "react";
 
 type DemoComponent = (typeof autoNumericMUIComponents)[number]["Component"];
 

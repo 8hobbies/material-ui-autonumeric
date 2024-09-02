@@ -24,6 +24,7 @@ import {
 } from "@mui/material";
 import { AutoNumericMUIInputBase } from "./AutoNumericMUIInputBase.js";
 import type { CallbackOptions } from "autonumeric";
+import type { JSX } from "react";
 
 type Props<Component extends React.FunctionComponent> =
   Parameters<Component>[0] & { inputRef?: undefined };

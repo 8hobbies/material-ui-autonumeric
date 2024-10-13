@@ -90,7 +90,7 @@ Respectively, they wrap
 
 - [`TextField`](https://mui.com/material-ui/api/text-field/)
 - [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/)
-- [`FilledInput`](https://mui.com/material-ui/api/filled-text/)
+- [`FilledInput`](https://mui.com/material-ui/api/filled-input/)
 - [`Input`](https://mui.com/material-ui/api/input/)
 - [`InputBase`](https://mui.com/material-ui/api/input-base/)
 

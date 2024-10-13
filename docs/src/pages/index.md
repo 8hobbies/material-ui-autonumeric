@@ -89,7 +89,7 @@ Material UI components integrated with [AutoNumeric][] and permits interaction w
 Respectively, they wrap
 
 - [`TextField`](https://mui.com/material-ui/api/text-field/)
-- [`OutlinedText`](https://mui.com/material-ui/api/outlined-text/)
+- [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/)
 - [`FilledInput`](https://mui.com/material-ui/api/filled-text/)
 - [`Input`](https://mui.com/material-ui/api/input/)
 - [`InputBase`](https://mui.com/material-ui/api/input-base/)

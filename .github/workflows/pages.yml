@@ -21,43 +21,10 @@ on:
     branches: ["master"]
 
 jobs:
-  build:
-    name: Build Pages
-    runs-on: ubuntu-24.04
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-          cache: "npm"
-
-      - name: Install Dependencies
-        run: |
-          npm install && npm install --prefix docs
-
-      - name: Generate Docs
-        run: |
-          npm run doc
-
-      - name: Upload GitHub Pages Artifact
-        uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: docs/build
-
-  deploy:
-    name: Deploy Pages
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-24.04
+  pages:
     permissions:
       pages: write
       id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    uses: 8hobbies/workflows/.github/workflows/npm-doc-pages.yml@4d06784788e51fa7cf79a34e4ec23283067db5a8
+    with:
+      doc-path: "docs/build"

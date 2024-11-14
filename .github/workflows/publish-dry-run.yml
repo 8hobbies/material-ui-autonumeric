@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Publish to npmjs
+name: Publish Dry Run
 
 on:
   push:
-    tags: ["v*"]
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
 jobs:
-  build:
-    uses: 8hobbies/workflows/.github/workflows/npm-publish.yml@e7fd4a1cebbdddd1747928b36f24fcba81436050
-    secrets:
-      npm-auth-token: ${{ secrets.NPM_TOKEN }}
+  run:
+    uses: 8hobbies/workflows/.github/workflows/npm-publish-dry-run.yml@4d06784788e51fa7cf79a34e4ec23283067db5a8

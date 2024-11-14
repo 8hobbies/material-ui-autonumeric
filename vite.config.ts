@@ -18,7 +18,13 @@ export default defineConfig({
     exclude: [...configDefaults.exclude, "./src/demo/**"],
     coverage: {
       provider: "v8",
-      exclude: ["dist/**", "docs/**", "src/demo/**"],
+      exclude: [
+        "dist/**",
+        "docs/**",
+        "src/demo/**",
+        "eslint.config.mjs",
+        "vite.config.ts",
+      ],
       reporter: ["cobertura", "text"],
       thresholds: {
         lines: 100,

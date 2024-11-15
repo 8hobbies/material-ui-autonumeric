@@ -23,7 +23,7 @@ import {
   type AutoNumericOutlinedInput,
   type AutoNumericTextField,
   autoNumericMUIComponents,
-} from "../lib/MaterialUI.js";
+} from "../lib/index.js";
 import { type JSX, useState } from "react";
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
@@ -195,6 +195,33 @@ for (const component of autoNumericMUIComponents) {
       await user.clear(inputElement);
       await user.keyboard("{Tab}");
       expect(inputElement).toHaveDisplayValue("0.00");
+    });
+
+    test(`When onBlur event registered, it is respected`, async () => {
+      let onBlurEntered = false;
+      function TestApp(): JSX.Element {
+        const [state, setState] = useState("1");
+        return (
+          <>
+            <Component
+              valueState={{ state, stateSetter: setState }}
+              props={{
+                onBlur: () => {
+                  onBlurEntered = true;
+                },
+              }}
+            />
+          </>
+        );
+      }
+
+      const user = userEvent.setup();
+      render(<TestApp />);
+
+      const inputElement = screen.getByRole("textbox");
+      await user.clear(inputElement);
+      await user.keyboard("{Tab}");
+      expect(onBlurEntered).toBeTruthy();
     });
   });
 }

@@ -21,8 +21,8 @@
     "lint": "npm run compile && eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
     "pack": "npm run clean && npm run compile && npm pack",
     "preview": "vite preview",
-    "test": "vitest --typecheck",
-    "test-once": "npm run coverage",
+    "postinstall": "cd docs && npm install",
+    "test": "npm run coverage",
     "test-all": "npm run lint && npm run compile && npm run test-once && npm run doc"
   },
   "repository": {

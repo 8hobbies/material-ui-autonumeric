@@ -1,7 +1,7 @@
 {
   "name": "material-ui-autonumeric",
   "description": "AutoNumeric-Powered Material UI Components. AutoNumeric is a powerful library that automatically formats numbers and currencies. Material UI-AutoNumeric brings that power to Material UI.",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "type": "module",
   "main": "dist/index.js",
   "browser": "dist/index.js",
@@ -19,7 +19,7 @@
     "doc": "cd docs && npm install && npm run build && cd .. && npm run build_demo",
     "format": "npm run compile && eslint --fix . && prettier . --write",
     "lint": "npm run compile && eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
-    "pack": "npm run clean && npm run compile && npm pack",
+    "prepack": "npm run clean && npm run compile",
     "preview": "vite preview",
     "test": "npm run coverage",
     "test-all": "npm run lint && npm run compile && npm run test-once && npm run doc"

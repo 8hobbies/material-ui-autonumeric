@@ -16,12 +16,11 @@
     "dev": "vite",
     "compile": "tsc --build . src/lib src/test src/demo",
     "coverage": "vitest run --coverage --typecheck",
-    "doc": "cd docs && npm run build && cd .. && npm run build_demo",
+    "doc": "cd docs && npm install && npm run build && cd .. && npm run build_demo",
     "format": "npm run compile && eslint --fix . && prettier . --write",
     "lint": "npm run compile && eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
     "pack": "npm run clean && npm run compile && npm pack",
     "preview": "vite preview",
-    "postinstall": "cd docs && npm install",
     "test": "npm run coverage",
     "test-all": "npm run lint && npm run compile && npm run test-once && npm run doc"
   },

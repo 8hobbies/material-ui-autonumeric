@@ -20,6 +20,7 @@
     "format": "npm run compile && eslint --fix . && prettier . --write",
     "lint": "npm run compile && eslint . --report-unused-disable-directives --max-warnings 0 && prettier . --check",
     "prepack": "npm run clean && npm run compile",
+    "prepublishOnly": "ncp docs/src/pages/index.md README.md",
     "preview": "vite preview",
     "test": "npm run coverage",
     "test-all": "npm run lint && npm run compile && npm run test-once && npm run doc"
@@ -59,6 +60,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/coverage-v8": "^2.1.6",
     "jsdom": "^25.0.1",
+    "ncp": "^2.0.0",
     "prettier": "^3.4.2",
     "rimraf": "^6.0.1",
     "typescript": "~5.7.2",

@@ -25,6 +25,6 @@ jobs:
     permissions:
       pages: write
       id-token: write
-    uses: 8hobbies/workflows/.github/workflows/npm-doc-pages.yml@00e84568aa8441faba7d53d88666b78e19c677d7
+    uses: 8hobbies/workflows/.github/workflows/npm-doc-pages.yml@abd958951e5f7fe9cdc2b25bf6686a4ba5b5c47e
     with:
       doc-path: "docs/build"

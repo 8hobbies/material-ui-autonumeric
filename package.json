@@ -45,7 +45,7 @@
     "react-autonumeric": "^2.1.1"
   },
   "devDependencies": {
-    "@8hobbies/eslint-conf-baseline": "6.0.0",
+    "@8hobbies/eslint-conf-baseline": "7.0.0",
     "@8hobbies/eslint-conf-react-baseline": "3.0.0",
     "@emotion/styled": "11.14.1",
     "@mui/material": "7.3.6",

@@ -59,7 +59,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.1",
     "@vitest/coverage-v8": "4.1.0",
-    "jsdom": "28.1.0",
+    "jsdom": "29.0.1",
     "ncp": "2.0.0",
     "prettier": "3.8.1",
     "rimraf": "6.1.3",

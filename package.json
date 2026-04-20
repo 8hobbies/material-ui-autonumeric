@@ -48,7 +48,7 @@
     "@8hobbies/eslint-conf-baseline": "7.0.0",
     "@8hobbies/eslint-conf-react-baseline": "3.0.0",
     "@emotion/styled": "11.14.1",
-    "@mui/material": "7.3.9",
+    "@mui/material": "9.0.0",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@testing-library/user-event": "14.6.1",
@@ -71,7 +71,7 @@
     "react-dom": "19.2.4"
   },
   "peerDependencies": {
-    "@mui/material": "^7.3.9",
+    "@mui/material": "^9.0.0",
     "react": "^18.3.1 || ^19.0.0"
   }
 }
